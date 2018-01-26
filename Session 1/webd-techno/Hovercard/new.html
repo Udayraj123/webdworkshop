@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+
+.caser{background-color: white;
+width:50px;
+display:inline;}
+
+.hovercard1{
+border:1px ridge #aaaaaa;
+display:none;
+background-color:#fafafa;
+padding: 3px;
+width:500px;
+height:101px;
+z-index:999999;}
+
+img{border:5px double #b5c6b4;}
+
+.caser:hover > .hovercard1 {
+display:block;
+box-shadow: 3px 3px 1px #888888;}
+
+</style>
+</head>
+<body>
+<div class="caser">Captain America 
+<div class="hovercard1">
+<img src="img.jpg" width="90px" height="90px" align="left"/>
+Hey this is the shield of captain america this is the thing by which he defends the good and fights the evil.<hr width=78% align="right";/>
+Find more about him at <a href="https://en.wikipedia.org/wiki/Captain_America" title="The Legend" target="_blank">Wikipedia</a>
+</div></div>
+ <!--In this caser is the area in which the hovercard gets activated by change the display value from none to block-->
+ <div>So this was the basic hovercard with only css and html using child selectors and display elment.
+</div></body></html>

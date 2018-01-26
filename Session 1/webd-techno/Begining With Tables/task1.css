@@ -1,0 +1,74 @@
+table{
+	border:3px solid blue;
+	
+}
+td{
+	border:1.5px dotted green;
+	height:50px;
+	width:200px;
+	text-align:center;
+	-webkit-transition:ease, height 1s ease;
+
+
+}
+td:hover{
+	border: 3px outset red;
+}
+td.apple:hover{
+	background-image:url(apple.jpg);
+	height:200px;
+	color:#b2b2b2;
+	font-weight:bold;
+}
+td.banna:hover{
+	background-image:url(banana.jpg);
+	height:200px;
+	color:#1e41db;
+	font-weight:bold;
+}
+td.ora:hover{
+	background-image:url(orange.jpg);
+	height:200px;
+	color:#1e41db;
+	font-weight:bold;
+}
+td.pine:hover{
+	background-image:url(pineapple.jpg);
+	height:200px;
+	color:yellow;
+	font-weight:bold;
+	background-size:200px 200px;
+}
+td.alm:hover{
+	background-image:url(Almond.jpg);
+	height:200px;
+	color:#1e41db;
+	font-weight:bold;
+}
+td.pap:hover{
+	background-image:url(papaya.jpg);
+	height:200px;
+	color:#1e41db;
+	font-weight:bold;
+}
+td.water:hover{
+	background-image:url(watermelon.jpg);
+	height:200px;
+	color:white;
+	font-weight:bold;
+}
+td.gra:hover{
+	background-image:url(grapes.jpg);
+	height:200px;
+	color:#1e41db;
+	font-weight:bold;
+}
+td.guv:hover{
+	background-image:url(guvava.jpg);
+	height:200px;
+	color:#1e41db;
+	font-weight:bold;
+	background-size:200px 200px;
+
+}
+
