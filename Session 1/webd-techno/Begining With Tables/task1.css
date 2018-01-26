@@ -1,6 +1,5 @@
 table{
 	border:3px solid blue;
-	
 }
 td{
 	border:1.5px dotted green;
@@ -8,16 +7,14 @@ td{
 	width:200px;
 	text-align:center;
 	-webkit-transition:ease, height 1s ease;
-
-
 }
 td:hover{
 	border: 3px outset red;
 }
 td.apple:hover{
-	background-image:url(apple.jpg);
+	background-image:url('apple.jpg');
 	height:200px;
-	color:#b2b2b2;
+	color: orange;
 	font-weight:bold;
 }
 td.banna:hover{

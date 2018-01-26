@@ -1,0 +1,104 @@
+Flow of things we'll do
+
+Revision video =
+HTML : https://www.youtube.com/watch?v=Ggh_y-33Eso&list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&index=7
+> Just ignore the meta tags for now.
+> and the php stuff in forms
+
+CSS : 
+[Must do] Part 1 : https://www.youtube.com/watch?v=I-rTKuEhrCM&list=PL07454EA7FF8D28AB&index=1
+
+// [Optional] Part 2 (Only text styling):  https://www.youtube.com/watch?v=rD_6jBlrIn4&list=PL07454EA7FF8D28AB&index=2
+// [Imp 4:24 to 8:10] Part 3 (Table styling) : https://youtu.be/V5dyLNY8WEY?t=4m24s
+
+
+Demos -
+Step wise stored htmls pages you have
+1. task1.html) A html table with all important snippets, images,etc 
+	Make it! (40Min) 
+2. CSS - Hovercard -> transitions too
+
+3. Inspect Element :
+> First (pseudo) hack-> input password trick
+> Modifying CSS of the site
+> Second (pseudo) hack-> ,pinterest handled it using reactjs
+
+Good answers - https://www.quora.com/What-cool-things-can-I-do-using-Inspect-Element-of-broswer
+
+4. A navbar page both scratch & bootstrap templates
+
+5. Using bootstrap templates
+
+
+Final Tips -
+1. You need not learn all of CSS material (You're gonna forget it anyway). Just understand how to use it when needed.
+2. Make a separate practice page
+3. (Especially for CSE ppl)Keep the username proper and same on all platforms.
+
+
+The End
+Fill this form https://goo.gl/forms/E1PAWOR6HIgQFaUK2
+
+
+---------------------------- ---------------------------- ---------------------------- ---------------------------- 
+JS - 
+1. Mousemeter
+2. Tic Tac Toe
+3. Draw rectangle (Modify hostelRoom.html)
+3. Snake
+
+
+Making own github pages - 
+https://guides.github.com/features/pages/
+or http://jmcglone.com/guides/github-pages/
+
+
+Showing how some of the stunning websites work - like the parallax effect websites
+- Inspect element and View source on those websites
+
+
+Seeing some of the stunning websites -
+http://www.theglitch.in/
+
+
+
+About fb group formation
+Be active in the group, share whatever good things you find and maybe I'll teach you how its done
+-> Make sure to fill the polls. 
+	>Task poll
+	>"How was the pace poll"?
+
+
+
+
+
+JS stuff -
+
+Okay how about this -
+Show them a working game on first day, explain all how it works
+In next session, make the same game using html5 canvas & show how clean the code gets
+
+Learn in one video -
+https://www.youtube.com/watch?v=kDyJN7qQETA&index=11&list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY
+
+Candidates-
+Snake game (Will take much time) :
+ Scratch : https://blendycat.com/sourcecode/javascriptsnake/snake.js.html
+P5js : https://www.youtube.com/watch?v=AaGK-fj-BAM
+
+Iteratively improve this mouse meter - Nope, dumb things there :p
+
+Damn good summary of very basics of JS - https://www.youtube.com/watch?v=Ukg_U3CnJWI
+
+
+Task : LED grid
+Task : Table Creator
+
+MySQL
+PHP
+Laravel
+
+
+More installs (for third session) -
+Xampp
+Grunt-assemble

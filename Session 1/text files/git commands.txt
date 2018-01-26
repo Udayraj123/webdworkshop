@@ -1,0 +1,25 @@
+// Proper Tutorial = http://try.github.io/levels/1/
+
+// Goto the folder where index.html is present 
+// first time only
+git init  
+git remote add origin https://github.com/Udayraj123/Udayraj123.github.io 
+git config --global user.email "udayrajdeshmukh7@gmail.com" 
+git config --global user.name "udayraj123" 
+
+git add . 
+git commit -m "added index.html" 
+git push -u origin master
+// now goto username.github.io
+
+
+// next time when you make changes
+git add .
+git commit -m "some message"
+git push 
+// git push uses internet
+
+
+//not for all : to reset git remote
+git config --unset remote.origin.url // first time only
+git remote add origin https://github.com/Udayraj123/Udayraj123.github.io // first time only

@@ -1,0 +1,31 @@
+Everyone should have done the following before the workshop starts - 
+
+ALL DONE - Setup IITG_WIFI
+ANY PROBLEMS TELL IMMEDIATELY TO SHUBHAM OR UDAYRAJ
+
+
+Installation
+// On windows
+google "Git for windows" and install the setup on defaults
+
+//On linux, write following commands in the terminal (Ctrl + Alt + T)
+export http_proxy="http://yourusername:webmailpass@202.141.80.24:3128"
+export https_proxy="http://yourusername:webmailpass@202.141.80.24:3128"
+sudo apt-get update && sudo apt-get install git
+
+
+// Proxy settings for git ( Windows - Goto desktop, Right click and select Git Bash
+// on Linux - open terminal)
+// Do not write @iitg... & replace '@' by %40 if you have it in password
+
+ git config --global http.proxy "http://yourusername:webmailpass@202.141.80.24:3128"
+ git config --global https.proxy "http://yourusername:webmailpass@202.141.80.24:3128"
+
+
+// CHECK STATUS
+ git clone https://github.com/Udayraj123/webDworkshop/
+Check that this folder has been created, open it.
+
+// Those who have done all the above-
+Make sure you make an account by a unique username (You will use it in all future platforms, so choose wisely)
+Open github.com, Select 'new repository', name it as githubusername.github.io // not webmailusername
