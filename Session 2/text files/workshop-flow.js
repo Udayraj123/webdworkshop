@@ -1,3 +1,4 @@
+0. Last session problems?
 1. For today's lecture you may want to make a JSNotes.js file //'
 2. Do the "save_on_focus_lost" setting.
 
@@ -18,6 +19,7 @@ https://www.w3schools.com/js/js_array_methods.asp
 	mouseevents
 	// kbdevents- in snake game
 	the "this"
+	setInterval & setTimeout()//"redirects"
 
 JS - 
 >>>>>> Refine them - 20mins
@@ -35,6 +37,7 @@ Is that it?
 	> http://www.theglitch.in/
 
 
+The Console tab - debugging JS
 ----------- 
 Another hack for today- 
 FB Like all e.g.  IITG Liker -
@@ -61,6 +64,7 @@ Final Discussion -
 	b. Start "Expecting" things to exist. the methods (like .appendChild, than innerHTML), the templates, the js scripts, even utility tools/shortcuts
 	c. Again, practice speed typing. If anything that has helped me THROUGHOUT the years till my third year, its speed typing
 2. Tasks
+Watch : Making Snake game in JS - https://www.youtube.com/watch?v=AaGK-fj-BAM
 Task : LED grid - forloop,img,onhover,innerHTML
 Task : Table Creator - onChange, forloop, .appendChild
 Task : Make a walkthrough for your github.io website
