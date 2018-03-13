@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://javascript.info/task/create-object-tree/build-tree-dom/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style></style></head><body>
+
+  <div id="container"><ul><li>Fish<ul><li>trout</li><li>salmon</li></ul></li><li>Tree<ul><li>Huge<ul><li>sequoia</li><li>oak</li></ul></li><li>Flowering<ul><li>redbud</li><li>magnolia</li></ul></li></ul></li></ul></div>
+
+  <script>
+    let data = {
+      "Fish": {
+        "trout": {},
+        "salmon": {}
+      },
+
+      "Tree": {
+        "Huge": {
+          "sequoia": {},
+          "oak": {}
+        },
+        "Flowering": {
+          "redbud": {},
+          "magnolia": {}
+        }
+      }
+    };
+
+    function createTree(container, obj) {
+      container.append(createTreeDom(obj));
+    }
+
+    function createTreeDom(obj) {
+      // if there's no children, then the call returns undefined
+      // and the <ul> won't be created
+      if (!Object.keys(obj).length) return;
+
+      let ul = document.createElement('ul');
+
+      for (let key in obj) {
+        let li = document.createElement('li');
+        li.innerHTML = key;
+
+        let childrenUl = createTreeDom(obj[key]);
+        if (childrenUl) {
+          li.append(childrenUl);
+        }
+
+        ul.append(li);
+      }
+
+      return ul;
+    }
+
+    let container = document.getElementById('container');
+    createTree(container, data);
+  </script>
+
+
+
+</body></html>

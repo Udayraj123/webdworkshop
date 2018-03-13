@@ -2,6 +2,7 @@
 <html>
 <head>
 	<script type="text/javascript" src="jquery.min.js"></script>
+
 	<script type="text/javascript" src="jquery-cookie.js"></script>
 	<title>Tic Tac Toe</title>
 </head>
@@ -14,11 +15,11 @@
 	<br>&emsp;&emsp;&emsp;<button onclick="simulateCheck('O')">Check O</button>
 
 	<script>
-	var defText="Current Player : ";
-	var winnerText="Winner is : Player ";
-	var drawText="Its a Draw !";
-	var emptyBut=" ";
-	var space=" &emsp;&emsp;";
+		var defText="Current Player : ";
+		var winnerText="Winner is : Player ";
+		var drawText="Its a Draw !";
+		var emptyBut=" ";
+		var space=" &emsp;&emsp;";
 	var curr_player = 1; //initialize on reload
 	var allChecks = [
 		["1","4","7"],["2","5","8"],["3","6","9"], //verticals
@@ -115,6 +116,10 @@ for(var i=0;i<allChecks.length;i++){ //traverse allChecks array
 			var val3=$('#'+allChecks[i][2]).val(); 
 			if(val1==val2 && val2==val3 && val3 !=emptyBut && val3 == symbol){
 				console.log("Win due to positions in ",allChecks[i]);
+				for (boxNo in allChecks[i]){
+					console.log(allChecks[i][boxNo]);
+					$("#"+allChecks[i][boxNo]).attr("style",$("#"+allChecks[i][boxNo]).attr("style")+"background-color: red");
+				}
 				disableButtons();
 				var player= (symbol=="O")?1:2;
 				$('#player').html(winnerText + player);
@@ -128,6 +133,7 @@ for(var i=0;i<allChecks.length;i++){ //traverse allChecks array
 		}
 		if(flag==1){
 			$('#player').html(drawText);
+
 			disableButtons();
 			return;
 		}
@@ -135,6 +141,6 @@ for(var i=0;i<allChecks.length;i++){ //traverse allChecks array
 	}
 
 	
-	</script>
+</script>
 </body>
 </html>

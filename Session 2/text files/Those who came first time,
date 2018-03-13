@@ -1,0 +1,25 @@
+Those who came first time,
+
+Pre-requisites : 
+1. Tutorials -
+For beginners (~4hrs): Bucky's tutorials - You can watch the video with skipping (for-loops, if-else,etc). Just focus from the document.getElementById part.
+https://www.youtube.com/watch…
+For intermediates : You shall skip through above videos to revise yourself with the basics. Then watch the following video: 
+https://www.youtube.com/watch?v=Ukg_U3CnJWI
+
+2. make sure to have cloned this repository 
+https://github.com/Udayraj123/webdworkshop
+(those who had cloned already, should execute "git pull" in the shell)
+
+Those who are coming for the first time should setup github and sublime-text on their PCs.
+
+P.S. Come with full charged laptops.
+
+Install git bash if you haven't, the clone the repository
+   git clone https://github.com/Udayraj123/webDworkshop/
+
+Those who came last time.
+   git pull
+
+ //Common error "rejected" by upstream
+ It is probabl

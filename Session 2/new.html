@@ -1,0 +1,95 @@
+<!-- When a user clicks a key provide info on the key clicked -->
+<form action="#" id="sampForm">
+<input id='charInput' type="text">
+<p id="keyData">Key Data Here</p>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</form><br /><br />
+ 
+<button id="logoButton">Get Logo</button><br />
+<input id='mouseInput' type="text" size="30"><br />
+ 
+Mouse X: <input type="text" id="mouseX"><br />
+Mouse Y: <input type="text" id="mouseY"><br />
+ 
+<button id="clearInputs">Clear Inputs</button><br />
+ 
+<script>
+ 
+function getChar(event) {
+ 
+  // event.which returns the key or mouse button clicked
+  if (event.which == null) {
+ 
+    // Return the char if not a special character
+    return String.fromCharCode(event.keyCode); // IE
+  } else if (event.which!=0 && event.charCode!=0) {
+    return String.fromCharCode(event.which);   // Other Browsers
+  } else {
+    return null; // Special Key Clicked
+  }
+}
+ 
+document.getElementById('charInput').onkeypress = function(event) {
+  var char = getChar(event || window.event)
+  if (!char) return false; // Special Key Clicked
+ 
+  document.getElementById('keyData').innerHTML = char + " was clicked";
+  return true;
+}
+ 
+// Change text when the input gains focus
+document.getElementById('charInput').onfocus = function(event) {
+  document.getElementById('keyData').innerHTML = "Input Gained Focus";
+}
+ 
+// Change text when the input loses focus
+document.getElementById('charInput').onblur = function(event) {
+  document.getElementById('keyData').innerHTML = "Input Lost Focus";
+}
+ 
+// Change text when text is selected
+document.getElementById('charInput').onselect = function(event) {
+  document.getElementById('keyData').innerHTML = "Text Selected";
+}
+// Get mouse x y coordinates
+document.body.onmousemove = function(e) {
+    e = e || window.event;
+ 
+    // Get pageX, pageY : Mouse position relative to the html doc
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if (pageX === undefined) {
+ 
+        // clientX, clientY : Mouse position relative to the browsers viewport
+        // scrollLeft, scrollTop : Pixels an element is scrolled left or
+        // from the top
+        pageX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+        pageY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    }
+ 
+    document.getElementById('mouseX').value = pageX;
+    document.getElementById('mouseY').value = pageY;
+};
+ 
+// Clear all input elements
+document.getElementById('clearInputs').onclick = function(event) {
+  var inputElements = document.getElementsByTagName('input');
+ 
+  for (var i = 0; i < inputElements.length; i++) {
+  if (inputElements[i].type == "text") {
+    inputElements[i].value = "";
+  }
+}
+}
+ 
+// Add a p element after setting an attribute and text
+var paragraph3 = document.createElement("p");
+ 
+paragraph3.setAttribute("id", "paragraph3");
+ 
+paragraph3.innerHTML = "Proin eget turpis eget quam luctus malesuada ut ac nulla.";
+ // <p id='paragraph3'> Proin eget turpis eget quam luctus malesuada ut ac nulla. </p> 
+document.bod.appendChild(paragraph3);
+
+</script>

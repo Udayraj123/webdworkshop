@@ -25,20 +25,21 @@ document.write("Array : ", tomSmith.join(", "), "<br />");
  
 // Delete an index
 delete tomSmith[3];
- 
+
 // Sort an array (reverse() for reverse sort)
 // Works for sorting strings
 tomSmith.sort();
- 
+
 // Sort numbers
 var numbers = [4,3,9,1,20,43];
  
 // Descending sort return y - x
 numbers.sort(function(x,y){ return x - y });
+
 document.write("Num Array : ", numbers.toString(), "<br />");
  
 // Combine arrays
-var combinedArray = numbers.concat(tomSmith);
+var combinedArray = array1.concat(array2);
  
 // Remove the last item
 tomSmith.pop();
@@ -46,10 +47,10 @@ tomSmith.pop();
 // Add items to the end
 tomSmith.push("555-1212", "US");
  
-// Deletes the first item
+// Deletes the first item - Returns popped element of array
 tomSmith.shift();
  
-// Adds item to the first index
+// Adds item to the first index - Returns length of array
 tomSmith.unshift("Tom Smith");
  
 for (var i = 0; i < tomSmith.length; i++) {
@@ -89,7 +90,8 @@ function times3(num){
 }
  
 function multiply(func, num){
-  return func(num);
+  var x = func;
+  return x(num);
 }
  
 document.write("3 * 15 = ", multiply(times3, 15), "<br />");
@@ -105,8 +107,11 @@ document.write("3 * 45 = ", multiply(triple, 45), "<br />");
  
 // Receive variable number of arguments
 function getSum(){
+  // this 
+  // arguments[0]
+  // arguments[1]
   var sum = 0;
-  for(i = 0; i < arguments.length; i++){
+  for(i = 2; i < arguments.length-2; i++){
     sum += arguments[i];
   }
   return sum;
@@ -124,7 +129,7 @@ function times2(theArray){
   return newArray;
 }
  
-document.write("Array Doubled : ", times2([1,2,3,4,5]).toString(), "<br />");
+document.write("Array Doubled : ", times2(1,2,3,4,5).toString(), "<br />");
  
 // Recursive Function
 function factorial(num){

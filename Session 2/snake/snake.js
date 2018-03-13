@@ -175,6 +175,8 @@ function updateTail(){
         tailX[i] = tailX[i-1]; 
         tailY[i] = tailY[i-1]; 
     } 
+// replace this with shift
+
     tailX[0] = snakeX; 
     tailY[0] = snakeY; 
 } 

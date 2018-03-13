@@ -2,12 +2,12 @@
 1. For today's lecture you may want to make a JSNotes.js file //'
 2. Do the "save_on_focus_lost" setting.
 
-
 Revision:
 1. (The only video today 12 Minutes) : Damn good summary of very basics of JS
 	https://www.youtube.com/watch?v=Ukg_U3CnJWI
 
 Note to you: Your knowledge of C is going to help further.
+
 2. Passing a function, variable args, etc - 
 >>>>>> Hands on! - Show this by self
 source : https://youtu.be/fju9ii8YsGs?t=38m18s
@@ -24,11 +24,12 @@ https://www.w3schools.com/js/js_array_methods.asp
 JS - 
 >>>>>> Refine them - 20mins
 1. Mousemeter
-2. Tic Tac Toe
-3. Draw rectangle (Modify hostelRoom.html)
+2. Draw rectangle (Modify hostelRoom.html)
+
+3. Tic Tac Toe
 //4. Snake
 5. Using existing scripts
-> Bootstrap 
+> Bootstrap
 	> Form validation
 > That techniche interactive background
 > Intro.js
@@ -53,8 +54,8 @@ More: https://stackoverflow.com/questions/13423630/how-to-invite-all-friends-on-
 
 
 More bookmarks: "Must Check" -
-https://developers.google.com/web/updates
-JQuery bookmarklet
+https://developers.google.com/web/updates/
+
 
 
 Final Discussion -
@@ -63,17 +64,24 @@ Final Discussion -
 		-> Make sure to fill the polls. 
 	b. Start "Expecting" things to exist. the methods (like .appendChild, than innerHTML), the templates, the js scripts, even utility tools/shortcuts
 	c. Again, practice speed typing. If anything that has helped me THROUGHOUT the years till my third year, its speed typing
+		"speedtypingonline.com"
+		
 2. Tasks
 Watch : Making Snake game in JS - https://www.youtube.com/watch?v=AaGK-fj-BAM
 Task : LED grid - forloop,img,onhover,innerHTML
 Task : Table Creator - onChange, forloop, .appendChild
-Task : Make a walkthrough for your github.io website
+
+{Optional} Task : Make a walkthrough for your github.io website
+	->https://introjs.com/
+
 Another Parallax- http://demo.themeum.com/html/oxygen/
 
-3. Ideas from you! What more do you want (sublime, git and alike utilities?)
+3. Ideas from you! 
+What more do you want (sublime, git and alike utilities?)
 -> the idea doc link. 
+
 4. Some Applications -
-	1. Browser Extensions
+	1. Browser Extensions;
 	2. Web-apps (Cordova engine)
 	3. Scripting anywhere like IoT platforms like BoltIOT
 	4. GUI for your assignments
@@ -83,8 +91,9 @@ Another Parallax- http://demo.themeum.com/html/oxygen/
 	{ASK} how many know about Django, anyone heard about Laravel? PHP?
 	
 	Next installs -
-		Xampp
-		Grunt-assemble
+		Xampp 
+		grunt-assemble
+
 		MySQL, PHP, Laravel
 ----------- ----------- ----------- ----------- ----------- ----------- ----------- 
 

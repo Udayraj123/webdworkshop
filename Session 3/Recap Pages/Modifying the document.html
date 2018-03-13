@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://javascript.info/modifying-document -->
+<html lang="en" class="working-hover"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>window.currentUser = null;</script><title itemprop="name">Modifying the document</title><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script><link href="./Modifying the document_files/css" rel="stylesheet"><link rel="apple-touch-icon-precomposed" href="https://javascript.info/img/favicon/apple-touch-icon-precomposed.png"><link rel="canonical" href="https://javascript.info/modifying-document"><meta name="msapplication-TileColor" content="#222A2C"><meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"><!-- favicon the rest--><link rel="icon" href="https://javascript.info/img/favicon/favicon.png"><meta itemprop="image" content="https://javascript.info/img/site_preview_en_512x512.png"><meta property="og:title" content="Modifying the document"><meta property="og:image" content="https://javascript.info/img/site_preview_en_1200x630.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="fb:admins" content="100001562528165"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Modifying the document"><meta name="twitter:site" content="@iliakan"><meta name="twitter:creator" content="@iliakan"><meta name="twitter:image" content="https://javascript.info/img/site_preview_en_512x512.png"><link href="./Modifying the document_files/styles.3e81cfb45e9d794bf3b103727f17d685.css" rel="stylesheet"><link rel="prev" href="https://javascript.info/dom-attributes-and-properties"><link rel="next" href="https://javascript.info/styles-and-classes"><script>window.GA_ID = "UA-2056213-15";</script><script>window.YANDEX_METRIKA_ID = 32184394;</script><script>window.GoogleAnalyticsObject="ga",window.ga=function(){window.ga.q.push(arguments)},window.ga.q=[],window.ga.l=Date.now(),ga("create",GA_ID,"auto"),window.currentUser&&ga("set","&uid",currentUser.id),window.addEventListener("error",function(e){var r=(e.filename||e.errorUrl)+": "+(e.lineno||e.errorLine),n=e.stack||e.error&&e.error.stack;ga("send","exception",{exDescription:e.message+" "+r+" "+n,exFatal:!0})});</script><script src="https://www.google-analytics.com/analytics.js" async=""></script><script>ga('send', 'pageview');</script><script>window.metrika={reachGoal:function(){}},window.yandex_metrika_callbacks=[function(){try{window.metrika=new Ya.Metrika({id:YANDEX_METRIKA_ID,webvisor:!0,clickmap:!0,params:{user:window.currentUser&&window.currentUser.id}}),metrika.trackLinks({delay:150}),window.addEventListener("error",function(r){window.metrika.reachGoal("JSERROR",{src:(r.filename||r.errorUrl)+": "+(r.lineno||r.errorLine),stack:r.stack||r.error&&r.error.stack,message:r.message})})}catch(r){}}];</script><script src="https://mc.yandex.ru/metrika/watch.js" async=""></script><script>window.RECAPTCHA_ID = "6Lf9NyETAAAAACZlg-a9Us2SxvYbeVC1ROWaWv4O";</script><script src="./Modifying the document_files/init.js.download"></script><script src="./Modifying the document_files/head.2dcf4321168c7d42c0a0.js.download" defer=""></script><meta property="og:title" content="Modifying the document"><meta property="og:type" content="article"><script src="./Modifying the document_files/tutorial.2dcf4321168c7d42c0a0.js.download" defer="" data-manual="1"></script><script src="./Modifying the document_files/footer.2dcf4321168c7d42c0a0.js.download" defer=""></script><style></style></head><body class=""><script>window.fontTest();</script><span class="font-test" style=""></span><div class="page-wrapper page-wrapper_sidebar_on"><!--[if lt IE 10]><div style="color:red;text-align:center">Sorry, IE&lt;10 is not supported, please use a newer browser.</div><![endif]--><div class="sitetoolbar sitetoolbar_tutorial"><div style="display:none" id="notify-en-tutorial" class="notification notification_info notification_top sitetoolbar__notification"><div class="notification__content">The tutorial was recently rewritten from scratch. There may be typos, please use the "Edit on Github" link (in left sidebar in an article, at the bottom) to propose fixes.
+Thank you!</div><button title="Close" class="notification__close"></button></div><div class="sitetoolbar__content"><div class="sitetoolbar__logo-wrap"><a href="https://javascript.info/" class="sitetoolbar__link sitetoolbar__link_logo"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal" data="./Modifying the document_files/sitetoolbar__logo_en.svg" style="left: 0px; top: 0px; position: absolute;"></object><img src="./Modifying the document_files/sitetoolbar__logo_en.svg" width="200" class="sitetoolbar__logo sitetoolbar__logo_normal" alt="" style="visibility: hidden;"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_small" data="./Modifying the document_files/sitetoolbar__logo_small_en.svg" style="left: 0px; top: 0px; position: absolute;"></object><img src="./Modifying the document_files/sitetoolbar__logo_small_en.svg" width="70" class="sitetoolbar__logo sitetoolbar__logo_small" alt=""><script>Array.prototype.forEach.call(document.querySelectorAll("img.sitetoolbar__logo"),function(e){var t=document.createElement("object");t.type="image/svg+xml",t.className=e.className,t.style.cssText="left:0;top:0;position:absolute",t.onload=function(){t.onload=null,e.style.visibility="hidden"},t.data=e.src,e.parentNode.insertBefore(t,e)});</script></a></div><div class="sitetoolbar__nav-toggle-wrap"><button type="button" class="sitetoolbar__nav-toggle"></button></div><nav class="sitetoolbar__sections"><ul class="sitetoolbar__sections-list"></ul></nav><div class="sitetoolbar__book-wrap"><a href="https://javascript.info/ebook" class="buy-book-button"><span class="buy-book-button__extra-text">Buy</span>EPUB/PDF</a></div><div class="sitetoolbar__login-wrap"><button data-action-login="" class="sitetoolbar__login"></button></div><div class="sitetoolbar__search-wrap"><div class="sitetoolbar__search-content"><form method="GET" action="https://javascript.info/search" class="sitetoolbar__search"><button type="button" class="sitetoolbar__search-toggle"></button><div class="sitetoolbar__search-input"><div class="text-input"><input name="query" placeholder="Search on Javascript.info" class="text-input__control" type="text"></div><button type="submit" class="sitetoolbar__find">Search</button></div></form></div></div></div><!-- todo: en variant--><div class="tablet-menu"><div class="tablet-menu__line"><div class="tablet-menu__content"><form action="https://javascript.info/search/" class="tablet-menu-search"><input type="search" name="query" placeholder="Search in the tutorial" required="" class="tablet-menu-search__input"><button type="submit" name="type" value="articles" class="tablet-menu-search__button">Search</button></form></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><a href="https://javascript.info/tutorial/map" data-action="tutorial-map" class="map"><span class="map__text">Tutorial map</span></a></div></div><!--+e.line--><!--  +e.content--><!--    +b("a").tablet-ebook(href="/ebook")--><!--      +e("span").text Купить учебник--><!--      +e("span").note (EPUB + PDF)--><div class="tablet-menu__line"><div class="tablet-menu__content"><div class="share-icons"><span class="share-icons__title">Share</span><a href="https://twitter.com/share?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_tw"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_fb"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_gp"></a><a href="https://vkontakte.ru/share.php?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_vk"></a></div></div></div></div><progress data-sticky="" value="7" max="27" data-tooltip="Lesson 7 of 27" class="tutorial-progress"></progress></div><div class="page page_sidebar_on page_sidebar-animation-on"><script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");var pageWrapper=document.querySelector(".page-wrapper");pageWrapper&&pageWrapper.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")},0);</script><div class="page__inner"><main class="main main_width-limit"><header class="main__header"><ol class="breadcrumbs"><li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-1" class="breadcrumbs__item breadcrumbs__item_home"><a href="https://javascript.info/" itemprop="url" class="breadcrumbs__link"><span itemprop="title" class="breadcrumbs__hidden-text">Учебник</span></a></li><li id="breadcrumb-1" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-2" itemprop="child" class="breadcrumbs__item"><a href="https://javascript.info/ui" itemprop="url" class="breadcrumbs__link"><span itemprop="title">Browser: Document, Events, Interfaces</span></a></li><li id="breadcrumb-2" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child" class="breadcrumbs__item"><a href="https://javascript.info/document" itemprop="url" class="breadcrumbs__link"><span itemprop="title">Document</span></a></li></ol><h1 class="main__header-title">Modifying the document</h1></header><div class="content"><article itemscope="" itemtype="http://schema.org/TechArticle"><meta itemprop="name" content="Modifying the document"><div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="email" content="iliakan@gmail.com"><meta itemprop="name" content="Ilya Kantor"></div><div itemprop="articleBody"><p>DOM modifications is the key to create “live” pages.</p>
+<p>Here we’ll see how to create new elements “on the fly” and modify the existing page content.</p>
+<p>First we’ll see a simple example and then explain the methods.</p>
+<h2><a class="main__anchor" name="example-show-a-message" href="https://javascript.info/modifying-document#example-show-a-message">Example: show a message</a></h2><p>For a start, let’s see how to add a message on the page that looks nicer than <code>alert</code>.</p>
+<p>Here’s how it will look:</p>
+<div data-trusted="1" class="code-example" data-demo-height="80" data-autorun="true" data-highlight-block="10-12" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="10" data-end="12">
+
+
+
+
+
+
+
+
+
+<code class="mask">
+
+
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector"><span class="token class">.alert</span> </span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#d6e9c6</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#3c763d</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#dff0d8</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Hi there!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span> You've read an important message.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      <div class="code-result code-example__result">
+        <iframe class="code-result__iframe" name="code-result-aotchd" style="height:80px" src="./Modifying the document_files/saved_resource.html"></iframe>
+      </div>
+      </div><p>That was an HTML example. Now let’s create the same <code>div</code> with JavaScript (assuming that the styles are still in the HTML or an external CSS file).</p>
+<h2><a class="main__anchor" name="creating-an-element" href="https://javascript.info/modifying-document#creating-an-element">Creating an element</a></h2><p>To create DOM nodes, there are two methods:</p>
+<dl>
+<dt><code>document.createElement(tag)</code></dt>
+<dd>
+<p>Creates a new element with the given tag:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">let</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></dd>
+<dt><code>document.createTextNode(text)</code></dt>
+<dd>
+<p>Creates a new <em>text node</em> with the given text:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">let</span> textNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token string">'Here I am'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></dd>
+</dl>
+<h3><a class="main__anchor" name="creating-the-message" href="https://javascript.info/modifying-document#creating-the-message">Creating the message</a></h3><p>In our case we want to make a <code>div</code> with given classes and the message in it:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">let</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"alert alert-success"</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;strong&gt;Hi there!&lt;/strong&gt; You've read an important message."</span><span class="token punctuation">;</span></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>After that, we have a ready DOM element. Right now it’s in the variable, but can not be seen, because it’s not been inserted into the page yet.</p>
+<h2><a class="main__anchor" name="insertion-methods" href="https://javascript.info/modifying-document#insertion-methods">Insertion methods</a></h2><p>To make the <code>div</code> show up, we need to insert it somewhere into <code>document</code>. For instance, in <code>document.body</code>.</p>
+<p>There’s a special method for that: <code>document.body.appendChild(div)</code>.</p>
+<p>Here’s the full code:</p>
+<div data-trusted="1" class="code-example" data-demo-height="80" data-highlight-block="15-15" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="15" data-end="15">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<code class="mask">
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector"><span class="token class">.alert</span> </span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#d6e9c6</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#3c763d</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#dff0d8</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">let</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"alert alert-success"</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;strong&gt;Hi there!&lt;/strong&gt; You've read an important message."</span><span class="token punctuation">;</span>
+
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>div<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Here’s a brief list of methods to insert a node into a parent element (<code>parentElem</code> for short):</p>
+<dl>
+<dt><code>parentElem.appendChild(node)</code></dt>
+<dd>
+<p>Appends <code>node</code> as the last child of <code>parentElem</code>.</p>
+<p>The following example adds a new <code>&lt;li&gt;</code> to the end of <code>&lt;ol&gt;</code>:</p>
+<div data-trusted="1" class="code-example" data-demo-height="100" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">let</span> newLi <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  newLi<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Hello, world!'</span><span class="token punctuation">;</span>
+
+  list<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newLi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></dd>
+<dt><code>parentElem.insertBefore(node, nextSibling)</code></dt>
+<dd>
+<p>Inserts <code>node</code> before <code>nextSibling</code> into <code>parentElem</code>.</p>
+<p>The following code inserts a new list item before the second <code>&lt;li&gt;</code>:</p>
+<div data-trusted="1" class="code-example" data-demo-height="100" data-highlight-block="9-9" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="9" data-end="9">
+
+
+
+
+
+
+
+
+<code class="mask">
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">let</span> newLi <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  newLi<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Hello, world!'</span><span class="token punctuation">;</span>
+
+  list<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>newLi<span class="token punctuation">,</span> list<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>To insert <code>newLi</code> as the first element, we can do it like this:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript">list<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>newLi<span class="token punctuation">,</span> list<span class="token punctuation">.</span>firstChild<span class="token punctuation">)</span><span class="token punctuation">;</span></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></dd>
+<dt><code>parentElem.replaceChild(node, oldChild)</code></dt>
+<dd>
+<p>Replaces <code>oldChild</code> with <code>node</code> among children of <code>parentElem</code>.</p>
+</dd>
+</dl>
+<p>All these methods return the inserted node. In other words, <code>parentElem.appendChild(node)</code> returns <code>node</code>. But usually the returned value is not used, we just run the method.</p>
+<p>These methods are “old school”: they exist from the ancient times and we can meet them in many old scripts. Unfortunately, there are some tasks that are hard to solve with them.</p>
+<p>For instance, how to insert <em>html</em> if we have it as a string? Or, given a node, how to insert another node <em>before</em> it? Of course, all that is doable, but not in an elegant way.</p>
+<p>So there exist two other sets of insertion methods to handle all cases easily.</p>
+<h3><a class="main__anchor" name="prepend-append-before-after" href="https://javascript.info/modifying-document#prepend-append-before-after">prepend/append/before/after</a></h3><p>This set of methods provides more flexible insertions:</p>
+<ul>
+<li><code>node.append(...nodes or strings)</code> – append nodes or strings at the end of <code>node</code>,</li>
+<li><code>node.prepend(...nodes or strings)</code> – insert nodes or strings into the beginning of <code>node</code>,</li>
+<li><code>node.before(...nodes or strings)</code> –- insert nodes or strings before the <code>node</code>,</li>
+<li><code>node.after(...nodes or strings)</code> –- insert nodes or strings after the <code>node</code>,</li>
+<li><code>node.replaceWith(...nodes or strings)</code> –- replaces <code>node</code> with the given nodes or strings.</li>
+</ul>
+<p>Here’s an example of using these methods to add more items to a list and the text before/after it:</p>
+<div data-trusted="1" class="code-example" data-autorun="true" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ol<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  ol<span class="token punctuation">.</span><span class="token function">before</span><span class="token punctuation">(</span><span class="token string">'before'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ol<span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span><span class="token string">'after'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> prepend <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  prepend<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'prepend'</span><span class="token punctuation">;</span>
+  ol<span class="token punctuation">.</span><span class="token function">prepend</span><span class="token punctuation">(</span>prepend<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> append <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  append<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'append'</span><span class="token punctuation">;</span>
+  ol<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>append<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      <div class="code-result code-example__result">
+        <iframe class="code-result__iframe" name="code-result-bc8qn7" style="display: block; height: 177px;" src="./Modifying the document_files/saved_resource(1).html"></iframe>
+      </div>
+      </div><p>Here’s a small picture what methods do:</p>
+<figure><div class="image" style="width:354px">
+      <div class="image__ratio" style="padding-top:50.282485875706215%"></div>
+      <img src="./Modifying the document_files/before-prepend-append-after@2x.png" alt="" width="354" height="178" class="image__image">
+      </div></figure><p>So the final list will be:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup">before
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ol<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>prepend<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>append<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+after</code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>These methods can insert multiple lists of nodes and text pieces in a single call.</p>
+<p>For instance, here a string and an element are inserted:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  div<span class="token punctuation">.</span><span class="token function">before</span><span class="token punctuation">(</span><span class="token string">'&lt;p&gt;Hello&lt;/p&gt;'</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'hr'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>All text is inserted <em>as text</em>.</p>
+<p>So the final HTML is:</p>
+<div data-trusted="1" class="code-example" data-highlight-block="0-0" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="0" data-end="0"><code class="mask">
+</code></code><code class=" language-markup"><span class="token entity" title="&lt;">&amp;lt;</span>p<span class="token entity" title="&gt;">&amp;gt;</span>Hello<span class="token entity" title="&lt;">&amp;lt;</span>/p<span class="token entity" title="&gt;">&amp;gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>In other words, strings are inserted in a safe way, like <code>elem.textContent</code> does it.</p>
+<p>So, these methods can only be used to insert DOM nodes or text pieces.</p>
+<p>But what if we want to insert HTML “as html”, with all tags and stuff working, like <code>elem.innerHTML</code>?</p>
+<h3><a class="main__anchor" name="insertadjacenthtml-text-element" href="https://javascript.info/modifying-document#insertadjacenthtml-text-element">insertAdjacentHTML/Text/Element</a></h3><p>There’s another, pretty versatile method: <code>elem.insertAdjacentHTML(where, html)</code>.</p>
+<p>The first parameter is a string, specifying where to insert, must be one of the following:</p>
+<ul>
+<li><code>"beforebegin"</code> – insert <code>html</code> before <code>elem</code>,</li>
+<li><code>"afterbegin"</code> – insert <code>html</code> into <code>elem</code>, at the beginning,</li>
+<li><code>"beforeend"</code> – insert <code>html</code> into <code>elem</code>, at the end,</li>
+<li><code>"afterend"</code> – insert <code>html</code> after <code>elem</code>.</li>
+</ul>
+<p>The second parameter is an HTML string, inserted “as is”.</p>
+<p>For instance:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  div<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">'beforebegin'</span><span class="token punctuation">,</span> <span class="token string">'&lt;p&gt;Hello&lt;/p&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">'afterend'</span><span class="token punctuation">,</span> <span class="token string">'&lt;p&gt;Bye&lt;/p&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>…Would lead to:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Bye<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>That’s how we can append an arbitrary HTML to our page.</p>
+<p>Here’s the picture of insertion variants:</p>
+<figure><div class="image" style="width:366px">
+      <div class="image__ratio" style="padding-top:48.63387978142077%"></div>
+      <img src="./Modifying the document_files/insert-adjacent@2x.png" alt="" width="366" height="178" class="image__image">
+      </div></figure><p>We can easily notice similarities between this and the previous picture. The insertion points are actually the same, but this method inserts HTML.</p>
+<p>The method has two brothers:</p>
+<ul>
+<li><code>elem.insertAdjacentText(where, text)</code> – the same syntax, but a string of <code>text</code> in inserted “as text” instead of HTML,</li>
+<li><code>elem.insertAdjacentElement(where, elem)</code> – the same syntax, but inserts an element.</li>
+</ul>
+<p>They exist mainly to make the syntax “uniform”. In practice, most of the time only <code>insertAdjacentHTML</code> is used, because for elements and text we have methods <code>append/prepend/before/after</code> – they are shorter to write and can insert nodes/text pieces.</p>
+<p>So here’s an alternative variant of showing a message:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector"><span class="token class">.alert</span> </span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#d6e9c6</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#3c763d</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#dff0d8</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">"afterbegin"</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token string">`&lt;div class="alert alert-success"&gt;
+    &lt;strong&gt;Hi there!&lt;/strong&gt; You've read an important message.
+  &lt;/div&gt;`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h2><a class="main__anchor" name="cloning-nodes-clonenode" href="https://javascript.info/modifying-document#cloning-nodes-clonenode">Cloning nodes: cloneNode</a></h2><p>How to insert one more similar message?</p>
+<p>We could make a function and put the code there. But the alternative way would be to <em>clone</em> the existing <code>div</code> and modify the text inside it (if needed).</p>
+<p>Sometimes when we have a big element, that may be faster and simpler.</p>
+<ul>
+<li>The call <code>elem.cloneNode(true)</code> creates a “deep” clone of the element – with all attributes and subelements. If we call <code>elem.cloneNode(false)</code>, then the clone is made without child elements.</li>
+</ul>
+<p>An example of copying the message:</p>
+<div data-trusted="1" class="code-example" data-demo-height="120" data-highlight-block="15-18" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="15" data-end="18">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<code class="mask">
+
+
+
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector"><span class="token class">.alert</span> </span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#d6e9c6</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#3c763d</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#dff0d8</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Hi there!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span> You've read an important message.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">let</span> div2 <span class="token operator">=</span> div<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// clone the message</span>
+  div2<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'strong'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Bye there!'</span><span class="token punctuation">;</span> <span class="token comment">// change the clone</span>
+
+  div<span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span>div2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// show the clone after the existing div</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h2><a class="main__anchor" name="removal-methods" href="https://javascript.info/modifying-document#removal-methods">Removal methods</a></h2><p>To remove nodes, there are the following methods:</p>
+<dl>
+<dt><code>parentElem.removeChild(node)</code></dt>
+<dd>Removes <code>elem</code> from  <code>parentElem</code> (assuming it’s a child).</dd>
+<dt><code>node.remove()</code></dt>
+<dd>Removes the <code>node</code> from its place.</dd>
+</dl>
+<p>We can easily see that the second method is much shorter. The first one exists for historical reasons.</p>
+<div class="important important_smart">
+            <div class="important__header"><span class="important__type">Please note:</span></div>
+            <div class="important__content"><p>If we want to <em>move</em> an element to another place – there’s no need to remove it from the old one.</p>
+<p><strong>All insertion methods automatically remove the node from the old place.</strong></p>
+<p>For instance, let’s swap elements:</p>
+<div data-trusted="1" class="code-example" data-demo-height="50" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>First<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>second<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Second<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token comment">// no need to call remove</span>
+  second<span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// take #second and after it - insert #first</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div></div>
+<p>Let’s make our message disappear after a second:</p>
+<div data-trusted="0" class="code-example" data-highlight-block="16-17" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="16" data-end="17">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<code class="mask">
+
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector"><span class="token class">.alert</span> </span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#d6e9c6</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#3c763d</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#dff0d8</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">let</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"alert alert-success"</span><span class="token punctuation">;</span>
+  div<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;strong&gt;Hi there!&lt;/strong&gt; You've read an important message."</span><span class="token punctuation">;</span>
+
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>div<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> div<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// or setTimeout(() =&gt; document.body.removeChild(div), 1000);</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h2><a class="main__anchor" name="a-word-about-document-write" href="https://javascript.info/modifying-document#a-word-about-document-write">A word about “document.write”</a></h2><p>There’s one more, very ancient method of adding something to a web-page: <code>document.write</code>.</p>
+<p>The syntax:</p>
+<div data-trusted="1" class="code-example" data-highlight-block="1-3" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="1" data-end="3">
+<code class="mask">
+
+
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Somewhere in the page...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'&lt;b&gt;Hello from JS&lt;/b&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>The end<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>The call to <code>document.write(html)</code> writes the <code>html</code> into page “right here and now”. The <code>html</code> string can be dynamically generated, so it’s kind of flexible. We can use JavaScript to create a full-fledged webpage and write it.</p>
+<p>The method comes from times when there were no DOM, no standards… Really old times. It still lives, because there are scripts using it.</p>
+<p>In modern scripts we can rarely see it, because of the following important limitation:</p>
+<p><strong>The call to <code>document.write</code> only works while the page is loading.</strong></p>
+<p>If we call it afterwards, the existing document content is erased.</p>
+<p>For instance:</p>
+<div data-trusted="1" class="code-example" data-highlight-block="1-5" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="1" data-end="5">
+<code class="mask">
+
+
+
+
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>After one second the contents of this page will be replaced...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token comment">// document.write after 1 second</span>
+  <span class="token comment">// that's after the page loaded, so it erases the existing content</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'&lt;b&gt;...By this.&lt;/b&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>So it’s kind of unusable at “after loaded” stage, unlike other DOM methods we covered above.</p>
+<p>That was the downside.</p>
+<p>Technically, when <code>document.write</code> is called while the browser is still reading HTML, it appends something to it, and the browser consumes it just as it were initially there.</p>
+<p>That gives us the upside – it works blazingly fast, because there’s <em>no DOM modification</em>. It writes directly into the page text, while the DOM is not yet built, and the browser puts it into DOM at generation-time.</p>
+<p>So if we need to add a lot of text into HTML dynamically, and we’re at page loading phase, and the speed matters, it may help. But in practice these requirements rarely come together. And usually we can see this method in scripts just because they are old.</p>
+<h2><a class="main__anchor" name="summary" href="https://javascript.info/modifying-document#summary">Summary</a></h2><p>Methods to create new nodes:</p>
+<ul>
+<li><code>document.createElement(tag)</code> – creates an element with the given tag,</li>
+<li><code>document.createTextNode(value)</code> – creates a text node (rarely used),</li>
+<li><code>elem.cloneNode(deep)</code> – clones the element, if <code>deep==true</code> then with all descendants.</li>
+</ul>
+<p>Insertion and removal of nodes:</p>
+<ul>
+<li>
+<p>From the parent:</p>
+<ul>
+<li><code>parent.appendChild(node)</code></li>
+<li><code>parent.insertBefore(node, nextSibling)</code></li>
+<li><code>parent.removeChild(node)</code></li>
+<li><code>parent.replaceChild(newElem, node)</code></li>
+</ul>
+<p>All these methods return <code>node</code>.</p>
+</li>
+<li>
+<p>Given a list of nodes and strings:</p>
+<ul>
+<li><code>node.append(...nodes or strings)</code> – insert into <code>node</code>, at the end,</li>
+<li><code>node.prepend(...nodes or strings)</code> – insert into <code>node</code>, at the beginning,</li>
+<li><code>node.before(...nodes or strings)</code> –- insert right before <code>node</code>,</li>
+<li><code>node.after(...nodes or strings)</code> –- insert right after <code>node</code>,</li>
+<li><code>node.replaceWith(...nodes or strings)</code> –- replace <code>node</code>.</li>
+<li><code>node.remove()</code> –- remove the <code>node</code>.</li>
+</ul>
+<p>Text strings are inserted “as text”.</p>
+</li>
+<li>
+<p>Given a piece of HTML: <code>elem.insertAdjacentHTML(where, html)</code>, inserts depending on where:</p>
+<ul>
+<li><code>"beforebegin"</code> – insert <code>html</code> right before <code>elem</code>,</li>
+<li><code>"afterbegin"</code> – insert <code>html</code> into <code>elem</code>, at the beginning,</li>
+<li><code>"beforeend"</code> – insert <code>html</code> into <code>elem</code>, at the end,</li>
+<li><code>"afterend"</code> – insert <code>html</code> right after <code>elem</code>.</li>
+</ul>
+<p>Also there are similar methods <code>elem.insertAdjacentText</code> and <code>elem.insertAdjacentElement</code>, they  insert text strings and elements, but they are rarely used.</p>
+</li>
+<li>
+<p>To append HTML to the page before it has finished loading:</p>
+<ul>
+<li><code>document.write(html)</code></li>
+</ul>
+<p>After the page is loaded such a call erases the document. Mostly seen in old scripts.</p>
+</li>
+</ul>
+</div></article><div class="tasks"><h2 id="tasks" class="tasks__title"><a href="https://javascript.info/modifying-document#tasks" class="main__anchor main__anchor_noicon tasks__title-anchor">Tasks</a></h2><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#createtextnode-vs-innerhtml-vs-textcontent" name="createtextnode-vs-innerhtml-vs-textcontent" class="main__anchor">createTextNode vs innerHTML vs textContent</a></h3><a href="https://javascript.info/task/createtextnode-vs-innerhtml" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 5</span></div><div class="task__content"><p>We have an empty DOM element <code>elem</code> and a string <code>text</code>.</p>
+<p>Which of these 3 commands do exactly the same?</p>
+<ol>
+<li><code>elem.append(document.createTextNode(text))</code></li>
+<li><code>elem.innerHTML = text</code></li>
+<li><code>elem.textContent = text</code></li>
+</ol>
+<button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>Answer: <strong>1 and 3</strong>.</p>
+<p>Both commands result in adding the <code>text</code> “as text” into the <code>elem</code>.</p>
+<p>Here’s an example:</p>
+<div data-trusted="1" class="code-example" data-demo-height="80" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>elem1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>elem2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>elem3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">let</span> text <span class="token operator">=</span> <span class="token string">'&lt;b&gt;text&lt;/b&gt;'</span><span class="token punctuation">;</span>
+
+  elem1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  elem2<span class="token punctuation">.</span>textContent <span class="token operator">=</span> text<span class="token punctuation">;</span>
+  elem3<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> text<span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#clear-the-element" name="clear-the-element" class="main__anchor">Clear the element</a></h3><a href="https://javascript.info/task/clear-elem" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 5</span></div><div class="task__content"><p>Create a function <code>clear(elem)</code> that removes everything from the element.</p>
+<div data-trusted="1" class="code-example" data-demo-height="60" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>elem<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>World<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">function</span> <span class="token function">clear</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/* your code */</span> <span class="token punctuation">}</span>
+
+  <span class="token function">clear</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// clears the list</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>First, let’s see how <em>not</em> to do it:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">clear</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> elem<span class="token punctuation">.</span>childNodes<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      elem<span class="token punctuation">.</span>childNodes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>That won’t work, because the call to <code>remove()</code> shifts the collection <code>elem.childNodes</code>, so elements start from the index <code>0</code> every time. But <code>i</code> increases, and some elements will be skipped.</p>
+<p>The <code>for..of</code> loop also does the same.</p>
+<p>The right variant could be:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">clear</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>elem<span class="token punctuation">.</span>firstChild<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    elem<span class="token punctuation">.</span>firstChild<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>And also there’s a simpler way to do the same:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">clear</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  elem<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#why-does-aaa-remain" name="why-does-aaa-remain" class="main__anchor">Why does "aaa" remain?</a></h3><a href="https://javascript.info/task/why-aaa" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 1</span></div><div class="task__content"><p>Run the example. Why does <code>table.remove()</code> not delete the text <code>"aaa"</code>?</p>
+<div data-trusted="1" class="code-example" data-demo-height="100" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="https://javascript.info/modifying-document#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>table<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  aaa
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token function">alert</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// the table, as it should be</span>
+
+  table<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// why there's still aaa in the document?</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>The HTML in the task is incorrect. That’s the reason of the odd thing.</p>
+<p>The browser has to fix it automatically. But there may be no text inside the <code>&lt;table&gt;</code>: according to the spec only table-specific tags are allowed. So the browser adds <code>"aaa"</code> <em>before</em> the <code>&lt;table&gt;</code>.</p>
+<p>Now it’s obvious that when we remove the table, it remains.</p>
+<p>The question can be easily answered by exploring the DOM using the browser tools. It shows <code>"aaa"</code> before the <code>&lt;table&gt;</code>.</p>
+<p>The HTML standard specifies in detail how to process bad HTML, and such behavior of the browser is correct.</p>
+</div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#create-a-list" name="create-a-list" class="main__anchor">Create a list</a></h3><a href="https://javascript.info/task/create-list" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 4</span></div><div class="task__content"><p>Write an interface to create a list from user input.</p>
+<p>For every list item:</p>
+<ol>
+<li>Ask a user about its content using <code>prompt</code>.</li>
+<li>Create the <code>&lt;li&gt;</code> with it and add it to <code>&lt;ul&gt;</code>.</li>
+<li>Continue until the user cancels the input (by pressing <kbd class="shortcut">Esc</kbd> or CANCEL in prompt).</li>
+</ol>
+<p>All elements should be created dynamically.</p>
+<p>If a user types HTML-tags, they should be treated like a text.</p>
+<p><a href="https://javascript.info/task/create-list/solution/" target="blank">Demo in new window</a></p><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>Please note the usage of <code>textContent</code> to assign the <code>&lt;li&gt;</code> content.</p>
+<p><a href="http://plnkr.co/edit/ejmFwM8XdHSDPvSOct6R?p=preview" target="_blank" data-plunk-id="ejmFwM8XdHSDPvSOct6R">Open the solution in the sandbox.</a></p></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#create-a-tree-from-the-object" name="create-a-tree-from-the-object" class="main__anchor">Create a tree from the object</a></h3><a href="https://javascript.info/task/create-object-tree" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 5</span></div><div class="task__content"><p>Write a function <code>createTree</code> that creates a nested <code>ul/li</code> list from the nested object.</p>
+<p>For instance:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">"Fish"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"trout"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"salmon"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token string">"Tree"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"Huge"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"sequoia"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"oak"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"Flowering"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"redbud"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"magnolia"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>The syntax:</p>
+<div data-trusted="1" class="code-example" data-highlight-block="1-1" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="1" data-end="1">
+<code class="mask">
+</code></code><code class=" language-javascript"><span class="token keyword">let</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">createTree</span><span class="token punctuation">(</span>container<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// creates the tree in the container</span></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>The result (tree) should look like this:</p>
+<div class="code-result">
+    <div class="code-result__toolbar toolbar"></div>
+    <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="./Modifying the document_files/saved_resource(2).html"></iframe>
+  </div><p>Choose one of two ways of solving this task:</p>
+<ol>
+<li>Create the HTML for the tree and then assign to <code>container.innerHTML</code>.</li>
+<li>Create tree nodes and append with DOM methods.</li>
+</ol>
+<p>Would be great if you could do both.</p>
+<p>P.S. The tree should not have “extra” elements like empty <code>&lt;ul&gt;&lt;/ul&gt;</code> for the leaves.</p>
+<p><a href="http://plnkr.co/edit/DIKZVzwLSbtmENu5JiHc?p=preview" target="_blank" data-plunk-id="DIKZVzwLSbtmENu5JiHc">Open the sandbox for the task.</a></p><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>The easiest way to walk the object is to use recursion.</p>
+<ol>
+<li><a href="http://plnkr.co/edit/2E3O6iJWuzAbbRToupqX?p=preview">The solution with innerHTML</a>.</li>
+<li><a href="http://plnkr.co/edit/shmIaeeSV8iVklrowp0o?p=preview">The solution with DOM</a>.</li>
+</ol>
+<p><a href="http://plnkr.co/edit/63GEDxN2vFsZzCO74Zxc?p=preview" target="_blank" data-plunk-id="63GEDxN2vFsZzCO74Zxc">Open the solution in the sandbox.</a></p></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#show-descendants-in-a-tree" name="show-descendants-in-a-tree" class="main__anchor">Show descendants in a tree</a></h3><a href="https://javascript.info/task/tree-count" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 5</span></div><div class="task__content"><p>There’s a tree organized as nested <code>ul/li</code>.</p>
+<p>Write the code that adds to each <code>&lt;li&gt;</code> the number of its descendants. Skip leaves (nodes without children).</p>
+<p>The result:</p>
+<div class="code-result">
+    <div class="code-result__toolbar toolbar"></div>
+    <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="./Modifying the document_files/saved_resource(3).html"></iframe>
+  </div><p><a href="http://plnkr.co/edit/nMK5ZEc027FcFYm0nUY2?p=preview" target="_blank" data-plunk-id="nMK5ZEc027FcFYm0nUY2">Open the sandbox for the task.</a></p><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>To append text to each <code>&lt;li&gt;</code> we can alter the text node <code>data</code>.</p>
+<p><a href="http://plnkr.co/edit/iIxsZDmWTf8WLvCNwRSe?p=preview" target="_blank" data-plunk-id="iIxsZDmWTf8WLvCNwRSe">Open the solution in the sandbox.</a></p></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#create-a-calendar" name="create-a-calendar" class="main__anchor">Create a calendar</a></h3><a href="https://javascript.info/task/calendar-table" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 4</span></div><div class="task__content"><p>Write a function <code>createCalendar(elem, year, month)</code>.</p>
+<p>The call should create a calendar for the given year/month and put it inside <code>elem</code>.</p>
+<p>The calendar should be a table, where a week is <code>&lt;tr&gt;</code>, and a day is <code>&lt;td&gt;</code>. The table top should be <code>&lt;th&gt;</code> with weekday names: the first day should be Monday, and so on till Sunday.</p>
+<p>For instance, <code>createCalendar(cal, 2012, 9)</code> should generate in element <code>cal</code> the following calendar:</p>
+<div class="code-result">
+    <div class="code-result__toolbar toolbar"></div>
+    <iframe class="code-result__iframe" data-trusted="1" style="height:210px" src="./Modifying the document_files/saved_resource(4).html"></iframe>
+  </div><p>P.S. For this task it’s enough to generate the calendar, should not yet be clickable.</p>
+<p><a href="http://plnkr.co/edit/52Ew9BJFQuSwO5T1T7yf?p=preview" target="_blank" data-plunk-id="52Ew9BJFQuSwO5T1T7yf">Open the sandbox for the task.</a></p><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>We’ll create the table as a string: <code>"&lt;table&gt;...&lt;/table&gt;"</code>, and then assign it to  <code>innerHTML</code>.</p>
+<p>The algorithm:</p>
+<ol>
+<li>Create the table header with <code>&lt;th&gt;</code> and weekday names.</li>
+<li>Create the date object <code>d = new Date(year, month-1)</code>. That’s the first day of <code>month</code> (taking into account that months in JavaScript start from <code>0</code>, not <code>1</code>).</li>
+<li>First few cells till the first day of the month <code>d.getDay()</code> may be empty. Let’s fill them in with <code>&lt;td&gt;&lt;/td&gt;</code>.</li>
+<li>Increase the day in <code>d</code>: <code>d.setDate(d.getDate()+1)</code>. If <code>d.getMonth()</code> is not yet the next month, then add the new cell <code>&lt;td&gt;</code> to the calendar. If that’s a Sunday, then add a newline <code>“&lt;/tr&gt;&lt;tr&gt;”</code>.</li>
+<li>If the month has finished, but the table row is not yet full, add empty <code>&lt;td&gt;</code> into it, to make it square.</li>
+</ol>
+<p><a href="http://plnkr.co/edit/MtVbnh2kq6fJkrMI51DV?p=preview" target="_blank" data-plunk-id="MtVbnh2kq6fJkrMI51DV">Open the solution in the sandbox.</a></p></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#colored-clock-with-setinterval" name="colored-clock-with-setinterval" class="main__anchor">Colored clock with setInterval</a></h3><a href="https://javascript.info/task/clock-setinterval" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 4</span></div><div class="task__content"><p>Create a colored clock like here:</p>
+<div class="code-result">
+    <div class="code-result__toolbar toolbar"></div>
+    <iframe class="code-result__iframe" data-trusted="1" style="height:60px" src="./Modifying the document_files/saved_resource(5).html"></iframe>
+  </div><p><a href="http://plnkr.co/edit/UBxtMxkGAu7mE99GmSJE?p=preview" target="_blank" data-plunk-id="UBxtMxkGAu7mE99GmSJE">Open the sandbox for the task.</a></p><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>First, let’s make HTML/CSS.</p>
+<p>Each component of the time would look great in its own <code>&lt;span&gt;</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>clock<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hour<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>hh<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>min<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>mm<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sec<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ss<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Also we’ll need CSS to color them.</p>
+<p>The <code>update</code> function will refresh the clock, to be called by <code>setInterval</code> every second:</p>
+<div data-trusted="1" class="code-example" data-highlight-block="2-2" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="2" data-end="2">
+
+<code class="mask">
+</code></code><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> clock <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'clock'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// (*)</span>
+  <span class="token keyword">let</span> hours <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>hours <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> hours <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token operator">+</span> hours<span class="token punctuation">;</span>
+  clock<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> hours<span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> minutes <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>minutes <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> minutes <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token operator">+</span> minutes<span class="token punctuation">;</span>
+  clock<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> minutes<span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> seconds <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>seconds <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> seconds <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token operator">+</span> seconds<span class="token punctuation">;</span>
+  clock<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> seconds<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>In the line <code>(*)</code> we every time check the current date. The calls to <code>setInterval</code> are not reliable: they may happen with delays.</p>
+<p>The clock-managing functions:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">let</span> timerId<span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">clockStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// run the clock</span>
+  timerId <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span>update<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// (*)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">clockStop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">clearInterval</span><span class="token punctuation">(</span>timerId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  timerId <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Please note that the call to <code>update()</code> is not only scheduled in <code>clockStart()</code>, but immediately run in the line <code>(*)</code>. Otherwise the visitor would have to wait till the first execution of <code>setInterval</code>. And the clock would be empty till then.</p>
+<p><a href="http://plnkr.co/edit/A4wpyRThfyXaqWx9NxsT?p=preview" target="_blank" data-plunk-id="A4wpyRThfyXaqWx9NxsT">Open the solution in the sandbox.</a></p></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#insert-the-html-in-the-list" name="insert-the-html-in-the-list" class="main__anchor">Insert the HTML in the list</a></h3><a href="https://javascript.info/task/append-to-list" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 5</span></div><div class="task__content"><p>Write the code to insert <code>&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;</code> between two <code>&lt;li&gt;</code> here:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ul<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>one<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>two<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>When we need to insert a piece of HTML somewhere, <code>insertAdjacentHTML</code> is the best fit.</p>
+<p>The solution:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript">one<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">'afterend'</span><span class="token punctuation">,</span> <span class="token string">'&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://javascript.info/modifying-document#sort-the-table" name="sort-the-table" class="main__anchor">Sort the table</a></h3><a href="https://javascript.info/task/sort-table" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="How important is the task, from 1 to 5" class="task__importance">importance: 5</span></div><div class="task__content"><p>There’s a table:</p>
+<table>
+<tbody><tr>
+  <th>Name</th>
+  <th>Surname</th>
+  <th>Age</th>
+</tr>
+<tr>
+  <td>John</td>
+  <td>Smith</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td>Pete</td>
+  <td>Brown</td>
+  <td>15</td>
+</tr>
+<tr>
+  <td>Ann</td>
+  <td>Lee</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>...</td>
+  <td>...</td>
+  <td>...</td>
+</tr>
+</tbody></table>
+<p>There may be more rows in it.</p>
+<p>Write the code to sort it by the <code>"name"</code> column.</p>
+<p><a href="http://plnkr.co/edit/xz1VjwMq57ugptrf5UTd?p=preview" target="_blank" data-plunk-id="xz1VjwMq57ugptrf5UTd">Open the sandbox for the task.</a></p><button type="button" class="task__solution">solution</button><div class="task__answer"><div class="task__answer-content"><p>The solution is short, yet may look a bit tricky, so here I provide it with extensive comments:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">let</span> sortedRows <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span>rows<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>rowA<span class="token punctuation">,</span> rowB<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> rowA<span class="token punctuation">.</span>cells<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">&gt;</span> rowB<span class="token punctuation">.</span>cells<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+table<span class="token punctuation">.</span>tBodies<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token operator">...</span>sortedRows<span class="token punctuation">)</span><span class="token punctuation">;</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><ol>
+<li>
+<p>Get all <code>&lt;tr&gt;</code>, like <code>table.querySelectorAll('tr')</code>, then make an array from them, cause we need array methods.</p>
+</li>
+<li>
+<p>The first TR (<code>table.rows[0]</code>) is actually a table header, so we take the rest by <code>.slice(1)</code>.</p>
+</li>
+<li>
+<p>Then sort them comparing by the content of the first <code>&lt;td&gt;</code> (the name field).</p>
+</li>
+<li>
+<p>Now insert nodes in the right order by <code>.append(...sortedRows)</code>.</p>
+<p>Tables always have an implicit  element, so we need to take it and insert into it: a simple <code>table.append(...)</code> would fail.</p>
+<p>Please note: we don’t have to remove them, just “re-insert”, they leave the old place automatically.</p>
+</li>
+</ol>
+<p><a href="http://plnkr.co/edit/IzHvsic6JD4aJam7OndG?p=preview" target="_blank" data-plunk-id="IzHvsic6JD4aJam7OndG">Open the solution in the sandbox.</a></p></div><button type="button" title="close" class="close-button task__answer-close"></button></div></div></div></div></div><!--  include /blocks/banner-bottom--><!--if lang == 'en'--><!--  include /blocks/banner-bottom.en--></div><div class="page__nav-wrap"><a href="https://javascript.info/dom-attributes-and-properties" data-tooltip="Attributes and properties" class="page__nav page__nav_prev"><span class="page__nav-text"><span class="page__nav-text-shortcut">Alt + <span class="page__nav-text-arr">←</span></span></span><span class="page__nav-text-alternate">Previous lesson</span></a><a href="https://javascript.info/styles-and-classes" data-tooltip="Styles and classes" class="page__nav page__nav_next"><span class="page__nav-text"><span class="page__nav-text-shortcut">Alt + <span class="page__nav-text-arr">→</span></span></span><span class="page__nav-text-alternate">Next lesson</span></a></div><div class="article-tablet-foot tablet-only"><div class="article-tablet-foot__layout"><div class="share-icons"><span class="share-icons__title">Share</span><a href="https://twitter.com/share?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_tw"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_fb"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_gp"></a><a href="https://vkontakte.ru/share.php?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_vk"></a></div><div class="article-tablet-foot__map"><a href="https://javascript.info/tutorial/map" data-action="tutorial-map" class="map"><span class="map__text">Tutorial map</span></a></div></div></div><div id="comments" class="comments"><div class="comments__header"><h2 class="comments__header-title"><a href="https://javascript.info/modifying-document#comments" name="comments">Comments</a></h2><div class="comments__read-before"><span class="comments__read-before-link">read this before commenting…</span><div class="comments__read-before-popup"><div class="comments__read-before-popup-i"><ul><li>You're welcome to post additions, questions to the articles and answers to them.</li><li>To insert a few words of code, use the <code>&lt;code&gt;</code> tag, for several lines – use <code>&lt;pre&gt;</code>, for more than 10 lines – use a sandbox (<a href="http://plnkr.co/edit/?p=preview">plnkr</a>, <a href="http://jsbin.com/">JSBin</a>, <a href="http://codepen.io/">codepen</a>…)</li><li>If you can't understand something in the article – please elaborate.</li></ul></div></div></div></div></div><div id="disqus_thread"></div><script>var disqus_config = function() { if (!this.page) this.page = {}; Object.assign(this.page, {"url":"https:\/\/javascript.info\/modifying-document","identifier":"\/modifying-document","title":"Modifying the document"}); };</script><script>var disqus_shortname = "javascriptinfo";</script><script>var disqus_enabled = true;</script></main></div><div class="page__sidebar sidebar sidebar_sticky-footer" style="top: 64px;"><button data-sidebar-toggle="" class="sidebar__toggle"></button><a href="https://javascript.info/tutorial/map" data-action="tutorial-map" data-tooltip="Tutorial map" class="map"></a><div class="sidebar__inner"><div class="sidebar__content"><div class="sidebar__section"><h4 class="sidebar__section-title">Chapter</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a href="https://javascript.info/document" class="sidebar__link">Document</a></li></ul></nav></div><div class="sidebar__section"><h4 class="sidebar__section-title">Lesson navigation</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#example-show-a-message" class="sidebar__link">Example: show a message</a></li><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#creating-an-element" class="sidebar__link">Creating an element</a></li><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#insertion-methods" class="sidebar__link">Insertion methods</a></li><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#cloning-nodes-clonenode" class="sidebar__link">Cloning nodes: cloneNode</a></li><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#removal-methods" class="sidebar__link">Removal methods</a></li><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#a-word-about-document-write" class="sidebar__link">A word about “document.write”</a></li><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#summary" class="sidebar__link">Summary</a></li></ul></nav></div><div class="sidebar__section"><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#tasks" class="sidebar__link">Tasks (10)</a></li><li class="sidebar__navigation-link"><a href="https://javascript.info/modifying-document#comments" class="sidebar__link">Comments</a></li></ul></nav></div><div class="sidebar__section"><div class="sidebar__section-title">Share</div><a href="https://twitter.com/share?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_tw sidebar__share"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_fb sidebar__share"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Fjavascript.info%2Fmodifying-document" class="share share_gp sidebar__share"></a></div><div class="sidebar__section"><a href="https://github.com/iliakan/javascript-tutorial-en/tree/master/2-ui/1-document/07-modifying-document/article.md" class="sidebar__link">Edit on Github</a></div></div></div></div></div></div><div class="page-footer"><div class="page-footer__left"><ul class="page-footer__list"><li class="page-footer__item">©&nbsp;2007—2018&nbsp; Ilya Kantor</li><li class="page-footer__item"><a href="https://javascript.info/about#contact-us" class="page-footer__link">contact us</a></li><li class="page-footer__item"><a href="https://javascript.info/about" class="page-footer__link">about the project</a></li><li class="page-footer__item"><a href="https://learn.javascript.ru/" class="page-footer__link">RU</a> / EN</li></ul></div><div class="page-footer__right"><ul class="page-footer__list"><li class="page-footer__item">powered by <a rel="nofollow" href="http://nodejs.org/" class="page-footer__link">node.js</a>&nbsp;&amp;&nbsp;<a rel="nofollow" href="http://github.com/iliakan/javascript-tutorial-en" class="page-footer__link">open source</a></li></ul></div></div><span class="link__type" data-tooltip="Attributes and properties" style="left: 334px; top: 398px;"></span></body></html>

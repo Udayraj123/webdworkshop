@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://javascript.info/task/tree-count/solution/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style></style></head><body>
+
+  <ul>
+    <li>Animals
+       [9]<ul>
+        <li>Mammals
+           [4]<ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+           [3]<ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Fishes
+       [5]<ul>
+        <li>Aquarium
+           [2]<ul>
+            <li>Guppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+           [1]<ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    let lis = document.getElementsByTagName('li');
+
+    for (let li of lis) {
+      // get the count of all <li> below this <li>
+      let descendantsCount = li.getElementsByTagName('li').length;
+      if (!descendantsCount) continue;
+
+      // add directly to the text node (append to the text)
+      li.firstChild.data += ' [' + descendantsCount + ']';
+    }
+  </script>
+
+
+
+</body></html>
