@@ -1,7 +1,8 @@
 # Welcome to Coding Club IITG's JS Hackathon 2018
 
 ## What’s a Hackathon?
-Excerpt from Sendgrid (https://sendgrid.com/blog/judge-hackathon/)
+Excerpt from [Sendgrid](https://sendgrid.com/blog/judge-hackathon/):
+
 A Hackathon is meant to bring developers together and have them build something. Hopefully, the developers learn something, meet new people, and have a good time in the process.
 The purpose of a hackathon is not to create useful software, and some of the best most exciting hacks are utterly useless (e.g. The Homework Machine, Virtual Reality Nerf Gun, and a traffic cam tracker)
 Also read: https://sendgrid.com/blog/why-hackathon/ 
