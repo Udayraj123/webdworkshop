@@ -33,4 +33,4 @@ Pro Tip: Use the Creativity App : https://play.google.com/store/apps/details?id=
 
 ## What everyone'll learn 
 1. Making use of Intro.js 
-2. Intermediate level use of Git (You'll make pull requests, documentations, etc)
+2. Intermediate level use of Git (You'll make pull requests, make a docs branch, etc)
