@@ -27,6 +27,7 @@
 <body style="height:2000px">
 
   Click on a field to move the ball there.
+  Click on a field to move the ball there.
   <br>
 
 
@@ -36,6 +37,7 @@
   </div>
 
   <script>
+    field = document.getElementById("field");
     field.onclick = function(event) {
 
       // window-relative field coordinates
@@ -53,7 +55,6 @@
 
       // prevent crossing the left field boundary
       if (ballCoords.left < 0) ballCoords.left = 0;
-
 
       // // prevent crossing the right field boundary
       if (ballCoords.left + ball.clientWidth > field.clientWidth) {
