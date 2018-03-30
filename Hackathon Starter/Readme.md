@@ -20,18 +20,31 @@ The theme is to learn and extensively use jQuery and its plugins to create your 
 ## Flow of the things you'll do
 1. Warmup Tasks
 2. Ideation
-3. Discussion
+3. Discussion and Research
 4. Implementation
 5. Documentation and Live Demo 
 
-## Warm-up Tasks
+### Warm-up Tasks (45 minutes)
 - [ ] Make your github.io website - Refer: http://jmcglone.com/guides/github-pages/
-- [ ] 
-> Done the basic tasks in the Task poll (See session folders)
 
-## Ideation
-Pro Tip: Use the Creativity App : https://play.google.com/store/apps/details?id=es.jolusan.creativitybasic&hl=en
+For each of the tasks below, one team member has to post the link to the solution in the fb group. First to post gets more credits.
+- [ ] Table Creator
+- [ ] LED Grid
 
-## What everyone'll learn 
-1. Making use of Intro.js 
-2. Intermediate level use of Git (You'll make pull requests, documentations, etc)
+### Ideation
+Squeeze out your brains to think of a kickass idea. Remember the definition of hackathon though!
+*Pro Tip*: Use the Creativity App : https://play.google.com/store/apps/details?id=es.jolusan.creativitybasic&hl=en
+Also, take a read at this : https://www.quora.com/What-cool-things-can-I-make-with-JavaScript
+
+### Discussion and Research
+Once you have a workable idea, you can discuss it within yourselves or with the volunteers on its feasiblity in less than 11 hours, and you shall start searching for the right tools to use to code it. Don't forget to put links to everything you research into the google sheet (Note: you can Ctrl + D the pages, and then put them into the sheet in bulk from Bookmarks Manager)
+
+### Implementation
+Now you can stay at the Hall, or goto your room for implementing your idea. The volunteers will be available online all the time. Make sure to create a new (& private until the end of hackathon) github repository for your hackathon project.
+
+### Documentation and Live Demo
+Whenever one team member is free, he/she should start with the documentation. Follow this guide: https://blog.github.com/2016-08-22-publish-your-project-documentation-with-github-pages/. Also note that the live demos should be placed in the `docs` folder of your project repo.
+
+## What everyone must learn today?
+1. You have to learn and use atleast 3 Jquery plugins (may refer: https://tutorialzine.com/2013/04/50-amazing-jquery-plugins and https://github.com/petk/awesome-jquery)
+2. Intermediate level use of Git (Team members shall make [pull requests](https://help.github.com/articles/creating-a-pull-request/) to master repo, make documentations, etc)
