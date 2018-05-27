@@ -10,12 +10,15 @@ Also read: https://sendgrid.com/blog/why-hackathon/
 ## What's different in this hackathon than usual ones?
 1. It'll be a guided hackathon, you may contact the organisers for any help regarding the feasibilty of your idea and how you should implement it, or regarding any other issues.
 2. There'll be a live report card of your research. You'll submit a google sheet in which you'll enter the links to references you are using (not just visiting, but making some use of it for the hackathon). References can range from Tutorial videos to blogs to github repos or anything!
-Fill this form: https://goo.gl/forms/8dsraViC2YptyaeP2
+Fill this form: [https://goo.gl/forms/8dsraViC2YptyaeP2](https://goo.gl/forms/8dsraViC2YptyaeP2)
 3. You’ll be posting the progress on finishing some tasks in the group. Post the demo to below warm-up tasks as soon as you're done.
 
 ## What's expected to be done in this hackathon?
 Since most of the participants are still beginners, we're focussing on learning more about JS.
 The theme is to learn and extensively use jQuery and its plugins to create your application. Also, we are not particular about making something very innovative. What we really expect is a "Hacky" way to do something using JS, particularly JQuery.
+
+### Revision material
+You can go through the session-wise folders in the repo : [https://github.com/Udayraj123/webdworkshop/](https://github.com/Udayraj123/webdworkshop/)
 
 ## Flow of the things you'll do
 1. Warmup Tasks
@@ -25,7 +28,7 @@ The theme is to learn and extensively use jQuery and its plugins to create your 
 5. Documentation and Live Demo 
 
 ### Warm-up Tasks (45 minutes)
-- [ ] Make your github.io website - Refer: http://jmcglone.com/guides/github-pages/
+- [ ] Make your github.io website - Refer: [http://jmcglone.com/guides/github-pages/](http://jmcglone.com/guides/github-pages/)
 
 For each of the tasks below, one team member has to post the link to the solution in the fb group. First to post gets more credits.
 - [ ] Table Creator
@@ -33,8 +36,10 @@ For each of the tasks below, one team member has to post the link to the solutio
 
 ### Ideation
 Squeeze out your brains to think of a kickass idea. Remember the definition of hackathon though!
-*Pro Tip*: Use the Creativity App : https://play.google.com/store/apps/details?id=es.jolusan.creativitybasic&hl=en
-Also, take a read at this : https://www.quora.com/What-cool-things-can-I-make-with-JavaScript
+
+*Pro Tip*: Use the Creativity App : [Playstore Link](https://play.google.com/store/apps/details?id=es.jolusan.creativitybasic&hl=en)
+
+Also, take a read at this : [Cool things with JS](https://www.quora.com/What-cool-things-can-I-make-with-JavaScript)
 
 ### Discussion and Research
 Once you have a workable idea, you can discuss it within yourselves or with the volunteers on its feasiblity in less than 11 hours, and you shall start searching for the right tools to use to code it. Don't forget to put links to everything you research into the google sheet (Note: you can Ctrl + D the pages, and then put them into the sheet in bulk from Bookmarks Manager)
